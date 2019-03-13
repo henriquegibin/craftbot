@@ -24,7 +24,7 @@ func daemon() {
 	for {
 		log.SetOutput(colorable.NewColorableStdout())
 		auth := bot.Auth{Name: "capiroto"}
-		client, err := auth.JoinServer("minecraft.gibin.club", 25565)
+		client, err := auth.JoinServer("MY URL HERE", 25565)
 		if err != nil {
 			log.Fatal(err)
 		}
