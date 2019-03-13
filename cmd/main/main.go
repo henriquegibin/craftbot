@@ -32,9 +32,9 @@ func daemon() {
 		go client.HandleGame()
 		for event := range client.GetEvents() {
 			stringSlice := fmt.Sprint(event)
+			match, _ := regexp.MatchString("sleepnow", stringSlice) // palavra magina é sleepnow
 
-			match, _ := regexp.MatchString("sleepnow", stringSlice)
-			if match {
+			if match { // por causa do rountimes,o kill vai demorar um pouco para matar o bot
 				client.Chat("capiroto vai dormir também...")
 				return
 			}
